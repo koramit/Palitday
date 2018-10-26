@@ -1,7 +1,5 @@
 /*!
- * Pikaday
- *
- * Copyright © 2014 David Bushell | BSD & MIT license | https://github.com/Pikaday/Pikaday
+ * Palitday: modified from Pikaday (Copyright © 2014 David Bushell | BSD & MIT license)
  */
 
 (function (root, factory)
@@ -24,7 +22,7 @@
             return factory(moment);
         });
     } else {
-        root.Pikaday = factory(root.moment);
+        root.Palitday = factory(root.moment);
     }
 }(this, function (moment)
 {
@@ -425,7 +423,7 @@
                 arr.push('<option value="' + i + '"' + (i === year ? ' selected="selected"': '') + '>' + optionLabel + '</option>');
             }
         }
-        
+
         let yearLabel = "";
         if ( opts.nuchYearFormat === undefined || 
             !Array.isArray(opts.nuchYearFormat) || 
@@ -473,9 +471,9 @@
 
 
     /**
-     * Pikaday constructor
+     * Palitday constructor
      */
-    Pikaday = function(options)
+    Palitday = function(options)
     {
         var self = this,
             opts = self.config(options);
@@ -702,9 +700,9 @@
 
 
     /**
-     * public Pikaday API
+     * public Palitday API
      */
-    Pikaday.prototype = {
+    Palitday.prototype = {
 
 
         /**
@@ -1281,5 +1279,5 @@
 
     };
 
-    return Pikaday;
+    return Palitday;
 }));
