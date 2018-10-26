@@ -1,19 +1,20 @@
 {
-  "name": "pikaday",
+  "name": "palitday",
   "version": "1.8.0",
-  "description": "A refreshing JavaScript Datepicker — lightweight, no dependencies, modular CSS",
+  "description": "Pikaday with Buddhist calendar support",
   "keywords": [
     "datepicker",
     "calendar",
+    "Buddhist"
     "date"
   ],
-  "homepage": "https://pikaday.com",
-  "bugs": "https://github.com/Pikaday/Pikaday/issues",
+  "homepage": "https://github.com/koramit/Palitday",
+  "bugs": "https://github.com/koramit/Palitday/issues",
   "license": "(0BSD OR MIT)",
-  "main": "pikaday.js",
+  "main": "palitday.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pikaday/Pikaday.git"
+    "url": "https://github.com/koramit/Palitday.git"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",

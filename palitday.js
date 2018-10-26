@@ -409,10 +409,38 @@
 
         for (arr = []; i < j && i <= opts.maxYear; i++) {
             if (i >= opts.minYear) {
-                arr.push('<option value="' + i + '"' + (i === year ? ' selected="selected"': '') + '>' + (i) + '</option>');
+                let optionLabel = "";
+                if ( opts.nuchYearFormat === undefined || 
+                     !Array.isArray(opts.nuchYearFormat) || 
+                     opts.nuchYearFormat.length === 0 ) {
+                    optionLabel = (i);
+                } else {
+                    optionLabel += opts.nuchYearFormat[0] == 'AD' ? i : (i + 543).toString()
+                    if (opts.nuchYearFormat[1] !== undefined ) {
+                        optionLabel += ' ('
+                        optionLabel += opts.nuchYearFormat[1] == 'AD' ? i : (i + 543).toString()
+                        optionLabel += ') '
+                    }
+                }
+                arr.push('<option value="' + i + '"' + (i === year ? ' selected="selected"': '') + '>' + optionLabel + '</option>');
             }
         }
-        yearHtml = '<div class="pika-label">' + year + opts.yearSuffix + '<select class="pika-select pika-select-year" tabindex="-1">' + arr.join('') + '</select></div>';
+        
+        let yearLabel = "";
+        if ( opts.nuchYearFormat === undefined || 
+            !Array.isArray(opts.nuchYearFormat) || 
+            opts.nuchYearFormat.length === 0 ) {
+            yearLabel = year;
+        } else {
+            yearLabel += opts.nuchYearFormat[0] == 'AD' ? year : (parseInt(year) + 543).toString()
+            if (opts.nuchYearFormat[1] !== undefined ) {
+                yearLabel += ' ('
+                yearLabel += opts.nuchYearFormat[1] == 'AD' ? year : (parseInt(year) + 543).toString()
+                yearLabel += ') '
+            }
+        }
+
+        yearHtml = '<div class="pika-label">' + yearLabel + opts.yearSuffix + '<select class="pika-select pika-select-year" tabindex="-1">' + arr.join('') + '</select></div>';
 
         if (opts.showMonthAfterYear) {
             html += yearHtml + monthHtml;
