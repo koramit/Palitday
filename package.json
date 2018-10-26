@@ -1,40 +1,29 @@
 {
   "name": "palitday",
-  "version": "1.8.0",
+  "version": "1.0.0",
   "description": "Pikaday with Buddhist calendar support",
+  "main": "palitday.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "testling"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koramit/Palitday.git"
+  },
   "keywords": [
     "datepicker",
     "calendar",
-    "Buddhist"
+    "Buddhist",
     "date"
   ],
-  "homepage": "https://github.com/koramit/Palitday",
-  "bugs": "https://github.com/koramit/Palitday/issues",
+  "author": "Koramit Pichanaharee <koramit@lullabears.co> (https://github.com/koramit)",
   "license": "(0BSD OR MIT)",
-  "main": "palitday.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/koramit/Palitday.git"
+  "bugs": {
+    "url": "https://github.com/koramit/Palitday/issues"
   },
-  "devDependencies": {
-    "expect.js": "^0.3.1",
-    "jshint": "^2.9.6",
-    "mocha": "^5.2.0"
-  },
-  "testling": {
-    "harness": "mocha",
-    "files": "tests/*.js",
-    "browsers": [
-      "ie/7..latest",
-      "chrome/latest",
-      "firefox/3.6",
-      "firefox/latest",
-      "safari/latest",
-      "opera/latest"
-    ]
-  },
-  "scripts": {
-    "test": "testling",
-    "lint": "jshint *.js plugins/*.js tests/*.js"
-  }
+  "homepage": "https://github.com/koramit/Palitday#readme"
 }

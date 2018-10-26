@@ -1,9 +1,6 @@
 Palitday
 ========
 
-[![NPM version][npm-image]][npm-url]
-[![License][license-image]][license-url]
-
 ### Palitday: Pikaday สำหรับคนรัก Palitchoke
 package นี้  forge มาจาก [pikaday](https://github.com/Pikaday/Pikaday) เครดิตทั้งหมดยกให้ผู้เขียนต้นเฉบับและ PECK 😚😘
 
