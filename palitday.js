@@ -405,31 +405,29 @@
             j = 1 + year + opts.yearRange;
         }
 
-        for (arr = []; i < j && i <= opts.maxYear; i++) {
-            if (i >= opts.minYear) {
-                let optionLabel = "";
-                if ( opts.nuchYearFormat === undefined || 
-                     !Array.isArray(opts.nuchYearFormat) || 
-                     opts.nuchYearFormat.length === 0 ) {
-                    optionLabel = (i);
-                } else {
+        let yearLabel = "";
+        if ( opts.nuchYearFormat === undefined || 
+             !Array.isArray(opts.nuchYearFormat) || 
+             opts.nuchYearFormat.length === 0 ) { // check if nuchYearFormat did not set or invalid
+            for (arr = []; i < j && i <= opts.maxYear; i++) {
+                if (i >= opts.minYear) {
+                    arr.push('<option value="' + i + '"' + (i === year ? ' selected="selected"': '') + '>' + (i) + '</option>');
+                }
+            }
+            yearLabel = year;
+        } else { // case: nuchYearFormat did set and valid
+            for (arr = []; i < j && i <= opts.maxYear; i++) {
+                if (i >= opts.minYear) {
+                    let optionLabel = "";
                     optionLabel += opts.nuchYearFormat[0] == 'AD' ? i : (i + 543).toString()
                     if (opts.nuchYearFormat[1] !== undefined ) {
                         optionLabel += ' ('
                         optionLabel += opts.nuchYearFormat[1] == 'AD' ? i : (i + 543).toString()
                         optionLabel += ') '
                     }
+                    arr.push('<option value="' + i + '"' + (i === year ? ' selected="selected"': '') + '>' + optionLabel + '</option>');
                 }
-                arr.push('<option value="' + i + '"' + (i === year ? ' selected="selected"': '') + '>' + optionLabel + '</option>');
             }
-        }
-
-        let yearLabel = "";
-        if ( opts.nuchYearFormat === undefined || 
-            !Array.isArray(opts.nuchYearFormat) || 
-            opts.nuchYearFormat.length === 0 ) {
-            yearLabel = year;
-        } else {
             yearLabel += opts.nuchYearFormat[0] == 'AD' ? year : (parseInt(year) + 543).toString()
             if (opts.nuchYearFormat[1] !== undefined ) {
                 yearLabel += ' ('
