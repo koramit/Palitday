@@ -14,7 +14,7 @@ package นี้  fork มาจาก [pikaday](https://github.com/Pikaday/Pik
 ## Usage
 
 **Palitday** ไม่มีคน maintain นะจ๊ะ ดังนั้นจะ update ถึง Pikaday 1.8.0 เท่านั้น
-การใช้งานให้ใช้ตามคู่มือของ [Pikaday](https://github.com/Pikaday/Pikaday) ได้เลย
+การใช้งานให้ใช้ตามคู่มือของ [Pikaday](https://github.com/Pikaday/Pikaday) ได้เลย หรือดูที่ไฟล์ [index.html](index.html) ก็ได้จ้า
 
 ## Buddhist calendar
 
